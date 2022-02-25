@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+// Шрифт по умолчанию
+$fontFamily: 'Montserrat', sans-serif;
+
+// Переменные
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1220;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+// Оболочка
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	font-family: $fontFamily;
+}
+
+// Основная сетка
+.container {
+	max-width: $maxWidthContainer + px;
+	height: 100%;
+	margin: 0 auto;
+	@media (max-width: ($md1 + px)) {
+		max-width: 970px;
+	}
+	@media (max-width: ($md2 + px)) {
+		max-width: 870px;
+	}
+	@media (max-width: ($md3 + px)) {
+		max-width: none;
+		padding: 0 20px;
+	}
+}
+
+.header {
+	width: 100%;
+	height: 102px;
+
+	@media (max-width: ($md3 + px)) {
+		height: 85px;
+	}
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	.logo {
+		@media (max-width: ($md3 + px)) {
+			display: none;
+		}
+
+		&--mobile {
+			display: none;
+			
+			@media (max-width: ($md3 + px)) {
+				display: block;
+			}
+		}
+
+	}
+
+	&__contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-end;
+		font-size: 14px;
+
+		@media (max-width: ($md3 + px)) {
+			font-size: 12px;
+		}
+
+		&>* {
+			margin-bottom: 4px;
+		}
+
+		a {
+			color: black;
+			text-decoration: unset;
+		}
+
+		&-title {
+			display: none;
+
+			@media (max-width: ($md4 + px)) {
+				display: inline;
+				text-align: right;
+			}
+		}
+	}
+
+	&__phone,
+	&__mail,
+	&__address {
+		margin-left: 16px;
+		position: relative;
+		padding: 5px 0;
+		padding-left: 35px;
+
+		@media (max-width: ($md4 + px)) {
+			padding: 0;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 2px;
+			width: 24px;
+			height: 24px;
+			display: block;
+
+			@media (max-width: ($md4 + px)) {
+				display: none;
+			}
+		}
+	}
+
+	&__phone::before {
+		background-image: url(img/icon-phone.svg);
+	}
+
+	&__mail {
+		&::before {
+			background-image: url(img/icon-mail.svg);
+		}
+
+		@media (max-width: ($md2 + px)) {
+			display: none;
+		}
+	}
+
+	&__address {
+		&::before {
+			background-image: url(img/icon-address.svg);
+		}
+
+		@media (max-width: ($md2 + px)) {
+			display: none;
+		}
+	}
+
+	&__phones {
+		display: block;
+
+		@media (max-width: ($md4 + px)) {
+			display: flex;
+			flex-direction: column;
+			text-align: right;
+
+			&>* {
+				margin-bottom: 4px;
+			}
+		}
+	}
+
+}
