@@ -70,6 +70,18 @@ body {
   height: 100%;
 }
 
+@media (max-width: 991.98px) {
+  .header__content {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header__content {
+    padding: unset;
+  }
+}
+
 @media (max-width: 767.98px) {
   .header .logo {
     display: none;
@@ -203,10 +215,29 @@ body {
   }
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .primary {
   max-height: 706px;
-  background-position: right;
   background-repeat: no-repeat;
+  background-image: url(img/primary-background.png);
+  background-position: 35%;
+}
+
+@media (max-width: 479.98px) {
+  .primary {
+    background-image: url(img/primary-background-mobile.png);
+    background-position: top;
+    background-size: contain;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -237,8 +268,11 @@ body {
   color: black;
   text-decoration: unset;
   padding: 10px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
+  border-bottom: 1px solid transparent;
 }
 
 .primary__nav a:hover {
@@ -346,6 +380,7 @@ body {
 .primary__text {
   margin-top: 74px;
   max-width: 700px;
+  margin-bottom: 130px;
 }
 
 .primary__text span:last-child {
@@ -362,6 +397,7 @@ body {
   .primary__text {
     font-size: 12px;
     margin-top: 28px;
+    margin-bottom: 32px;
   }
   .primary__text span:first-child {
     display: none;

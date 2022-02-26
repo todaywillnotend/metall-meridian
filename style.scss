@@ -60,6 +60,14 @@ body {
 		justify-content: space-between;
 		align-items: center;
 		height: 100%;
+
+		@media (max-width: ($md2 + px)) {
+			padding: 0 20px;
+		}
+
+		@media (max-width: ($md3 + px)) {
+			padding: unset;
+		}
 	}
 
 	.logo {
@@ -175,10 +183,22 @@ body {
 
 }
 
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
 .primary {
 	max-height: 706px;
-	background-position: right;
 	background-repeat: no-repeat;
+	background-image: url(img/primary-background.png);
+	background-position: 35%;
+
+	@media (max-width: ($md4 + px)) {
+		background-image: url(img/primary-background-mobile.png);
+		background-position: top;
+    	background-size: contain;
+	}	
 
 	.container {
 		@media (max-width: ($md3 + px)) {
@@ -205,7 +225,9 @@ body {
 			color: black;
 			text-decoration: unset;
 			padding: 10px 0;
+			box-sizing: border-box;
 			transition: all 0.1s ease-in-out;
+			border-bottom: 1px solid transparent;
 
 			&:hover {
 				border-bottom: 1px solid black;
@@ -299,6 +321,7 @@ body {
 	&__text {
 		margin-top: 74px;
 		max-width: 700px;
+		margin-bottom: 130px;
 
 		span:last-child {
 			display: none;
@@ -311,6 +334,7 @@ body {
 		@media (max-width: ($md3 + px)) {
 			font-size: 12px;
 			margin-top: 28px;
+			margin-bottom: 32px;
 
 			span {
 				&:first-child {
