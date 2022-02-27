@@ -555,7 +555,7 @@ body {
 }
 
 .contacts {
-	min-height: 500px;
+	// min-height: 500px;
 
 	&__body {
 		display: flex;
@@ -598,6 +598,37 @@ body {
 			font-family: $fontPrimary;
 			font-size: 18px;
 			margin-bottom: 16px;
+		}
+	}
+}
+
+.gallery {
+
+	&__body {
+		margin-top: 60px;
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+
+		@media (max-width: ($md3 + px)) {
+			margin-top: 8px;
+			justify-content: center;
+		}
+	}
+
+	&__image {
+		margin-right: 8px;
+		margin-bottom: 23px;
+
+		@media (max-width: ($md4 + px)) {
+			img {
+				width: 150px;
+				height: 150px;
+			}
+		}
+
+		&:last-child {
+			margin-right: 0;
 		}
 	}
 }
@@ -731,6 +762,7 @@ body {
 	a {
 		color: black;
 		text-decoration: unset;
+		display: inline-block;
 	}
 
 	&-title {

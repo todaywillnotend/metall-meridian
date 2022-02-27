@@ -562,10 +562,6 @@ body {
   right: 25px;
 }
 
-.contacts {
-  min-height: 500px;
-}
-
 .contacts__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -625,6 +621,43 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   margin-bottom: 16px;
+}
+
+.gallery__body {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 767.98px) {
+  .gallery__body {
+    margin-top: 8px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.gallery__image {
+  margin-right: 8px;
+  margin-bottom: 23px;
+}
+
+@media (max-width: 479.98px) {
+  .gallery__image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.gallery__image:last-child {
+  margin-right: 0;
 }
 
 @media (max-width: 767.98px) {
@@ -773,6 +806,7 @@ body {
 .contact a {
   color: black;
   text-decoration: unset;
+  display: inline-block;
 }
 
 .contact-title {
