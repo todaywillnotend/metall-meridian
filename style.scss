@@ -471,15 +471,23 @@ body {
 	}
 
 	&__item {
-		display: inline-flex;
-		width: 130px;
-		height: 34px;
-		/* margin: 0 30px; */
-		margin-left: 30px;
-		margin-bottom: 30px;
+		font-size: 18px;
+		display: inline-block;
+		min-width: 200px;
+		// margin-right: 60px;
+		margin: 0 30px;
+		margin-bottom: 32px;
 		position: relative;
 
 		@media (max-width: ($md3 + px)) {
+			min-width: unset;
+			display: inline-flex;
+			width: 120px;
+			height: 34px;
+			margin: 0;
+			margin-left: 30px;
+			margin-bottom: 30px;
+			position: relative;
 			font-size: 14px;
 		}
 
@@ -494,11 +502,12 @@ body {
 			height: 15px;
 			background-color: $green;
 			left: -23px;
-			top: 5px;
+			top: 3px;
 			
 			@media (max-width: ($md3 + px)) {
 				width: 7px;
 				height: 7px;
+				top: 5px;
 			}
 		}
 	}
