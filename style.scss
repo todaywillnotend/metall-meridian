@@ -91,100 +91,73 @@ body {
 	// }
 
 	&__contact {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-end;
-		font-size: 14px;
 		margin-top: 8px;
-
-		@media (max-width: ($md3 + px)) {
-			font-size: 12px;
-		}
-
-		&>* {
-			margin-bottom: 4px;
-		}
-
-		a {
-			color: black;
-			text-decoration: unset;
-		}
-
-		&-title {
-			display: none;
-
-			@media (max-width: ($md4 + px)) {
-				display: inline;
-				text-align: right;
-			}
-		}
 	}
 
-	&__phone,
-	&__mail,
-	&__address {
-		margin-left: 16px;
-		position: relative;
-		padding: 5px 0;
-		padding-left: 35px;
+	// &__phone,
+	// &__mail,
+	// &__address {
+	// 	margin-left: 16px;
+	// 	position: relative;
+	// 	padding: 5px 0;
+	// 	padding-left: 35px;
 
-		@media (max-width: ($md4 + px)) {
-			padding: 0;
-		}
+	// 	@media (max-width: ($md4 + px)) {
+	// 		padding: 0;
+	// 	}
 
-		&::before {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 2px;
-			width: 24px;
-			height: 24px;
-			display: block;
+	// 	&::before {
+	// 		content: "";
+	// 		position: absolute;
+	// 		left: 0;
+	// 		top: 2px;
+	// 		width: 24px;
+	// 		height: 24px;
+	// 		display: block;
 
-			@media (max-width: ($md4 + px)) {
-				display: none;
-			}
-		}
-	}
+	// 		@media (max-width: ($md4 + px)) {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
 
-	&__phone::before {
-		background-image: url(img/icon-phone.svg);
-	}
+	// &__phone::before {
+	// 	background-image: url(img/icon-phone.svg);
+	// }
 
-	&__mail {
-		&::before {
-			background-image: url(img/icon-mail.svg);
-		}
+	// &__mail {
+	// 	&::before {
+	// 		background-image: url(img/icon-mail.svg);
+	// 	}
 
-		@media (max-width: ($md2 + px)) {
-			display: none;
-		}
-	}
+	// 	@media (max-width: ($md2 + px)) {
+	// 		display: none;
+	// 	}
+	// }
 
-	&__address {
-		&::before {
-			background-image: url(img/icon-address.svg);
-		}
+	// &__address {
+	// 	&::before {
+	// 		background-image: url(img/icon-address.svg);
+	// 	}
 
-		@media (max-width: ($md2 + px)) {
-			display: none;
-		}
-	}
+	// 	@media (max-width: ($md2 + px)) {
+	// 		display: none;
+	// 	}
+	// }
 
-	&__phones {
-		display: block;
+	// &__phones {
+	// 	display: block;
 
-		@media (max-width: ($md4 + px)) {
-			display: flex;
-			flex-direction: column;
-			text-align: right;
+	// 	@media (max-width: ($md4 + px)) {
+	// 		display: flex;
+	// 		flex-direction: column;
+	// 		text-align: right;
 
-			&>* {
-				margin-bottom: 4px;
-			}
-		}
-	}
+	// 		&>* {
+	// 			margin-bottom: 4px;
+	// 		}
+	// 	}
+	// }
 
 }
 
@@ -394,7 +367,7 @@ body {
 		border-image-slice: 1;
 
 		@media (max-width: ($md3 + px)) {
-			width: 275px;
+			width: 75%;
 			padding: 16px 22.5px;
 			margin: 0;
 			flex-direction: row;
@@ -512,8 +485,6 @@ body {
 }
 
 .features {
-	// min-height: 400px;
-
 	&__body {
 		margin-top: 36px;
 		display: flex;
@@ -579,6 +550,54 @@ body {
 			background-image: url(img/icon-feature-3.svg);
 			top: 6px;
 			right: 25px;
+		}
+	}
+}
+
+.contacts {
+	min-height: 500px;
+
+	&__body {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		@media (max-width: ($md3 + px)) {
+			margin-left: 20px;
+			flex-direction: column;
+			align-items: center;
+
+			iframe {
+				width: 90%;
+				height: 300px;
+				margin-top: 10px;
+			}
+		}
+
+		@media (max-width: ($md4 + px)) {
+			iframe {
+				width: 250px;
+				height: 200px;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	&__contact {
+		margin-top: 60px;
+		max-width: 40%;
+
+		@media (max-width: ($md3 + px)) {
+			margin-top: 8px;
+			max-width: unset;
+		}
+
+		.contact-title {
+			display: block;
+			font-family: $fontPrimary;
+			font-size: 18px;
+			margin-bottom: 16px;
 		}
 	}
 }
@@ -672,8 +691,9 @@ body {
 			font-size: 14px;
 			color: $blue;
 			text-transform: uppercase;
-			padding: 13px 0 13px 10px;
+			padding: 13px 10% 13px 10px;
 			position: relative;
+			width: 85%;
 
 			&::before {
 				display: none;
@@ -684,11 +704,154 @@ body {
 				content: "";
 				width: 24px;
 				height: 24px;
-				right: 12px;
+				right: 0px;
 				top: 11px;
 				transition: all 0.15s ease-in-out;
 				background-image: url(img/arrow-bottom.svg);
 			}
 		}
+	}
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	font-size: 14px;
+
+	@media (max-width: ($md3 + px)) {
+		font-size: 12px;
+	}
+
+	&>* {
+		margin-bottom: 4px;
+	}
+
+	a {
+		color: black;
+		text-decoration: unset;
+	}
+
+	&-title {
+		display: none;
+
+		@media (max-width: ($md4 + px)) {
+			display: inline;
+			text-align: right;
+		}
+	}
+
+	&__phone,
+	&__mail,
+	&__address {
+		margin-left: 16px;
+		position: relative;
+		padding: 5px 0;
+		padding-left: 35px;
+
+		@media (max-width: ($md4 + px)) {
+			padding: 0;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 2px;
+			width: 24px;
+			height: 24px;
+			display: block;
+
+			@media (max-width: ($md4 + px)) {
+				display: none;
+			}
+		}
+	}
+
+	&__phone::before {
+		background-image: url(img/icon-phone.svg);
+	}
+
+	&__mail {
+		&::before {
+			background-image: url(img/icon-mail.svg);
+		}
+
+		@media (max-width: ($md2 + px)) {
+			display: none;
+		}
+	}
+
+	&__address {
+		&::before {
+			background-image: url(img/icon-address.svg);
+		}
+
+		@media (max-width: ($md2 + px)) {
+			display: none;
+		}
+	}
+
+	&__phones {
+		display: block;
+
+		@media (max-width: ($md4 + px)) {
+			display: flex;
+			flex-direction: column;
+			text-align: right;
+
+			&>* {
+				margin-bottom: 4px;
+			}
+		}
+	}
+
+	&--mobile-view {
+		.contact-title {
+			display: block;
+		}
+
+		.contact__phone,
+		.contact__mail,
+		.contact__address {
+			// font-size: 14px;
+			// padding-left: 34px;
+			// display: inline-block;
+			// height: 30px;
+			// display: flex;
+			// align-items: center;
+
+			@media (max-width: ($md3 + px)) {
+				font-size: 14px;
+				padding-left: 34px;
+				display: inline-block;
+				height: 30px;
+				display: flex;
+				align-items: center;
+	
+			}
+
+			&::before {
+				@media (max-width: ($md4 + px)) {
+					display: block;
+				}
+			}
+		}
+
+		.contact__address {
+			@media (max-width: ($md2 + px)) {
+				display: block;
+			}
+
+			@media (max-width: ($md3 + px)) {
+				height: 50px;
+			}
+
+		}
+	}
+
+	&--start {
+		align-items: flex-start;
 	}
 }
