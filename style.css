@@ -874,7 +874,7 @@ body {
   }
 }
 
-.contact__phone, .contact__mail, .contact__address {
+.contact__phone, .contact__mail, .contact__address, .contact__whatsapp {
   margin-left: 16px;
   position: relative;
   padding: 5px 0;
@@ -882,12 +882,12 @@ body {
 }
 
 @media (max-width: 479.98px) {
-  .contact__phone, .contact__mail, .contact__address {
+  .contact__phone, .contact__mail, .contact__address, .contact__whatsapp {
     padding: 0;
   }
 }
 
-.contact__phone::before, .contact__mail::before, .contact__address::before {
+.contact__phone::before, .contact__mail::before, .contact__address::before, .contact__whatsapp::before {
   content: "";
   position: absolute;
   left: 0;
@@ -898,9 +898,23 @@ body {
 }
 
 @media (max-width: 479.98px) {
-  .contact__phone::before, .contact__mail::before, .contact__address::before {
+  .contact__phone::before, .contact__mail::before, .contact__address::before, .contact__whatsapp::before {
     display: none;
   }
+}
+
+.contact__whatsapp {
+  padding-left: 0;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__whatsapp span {
+  margin-left: 10px;
 }
 
 .contact__phone::before {
@@ -954,7 +968,8 @@ body {
 @media (max-width: 767.98px) {
   .contact--mobile-view .contact__phone,
   .contact--mobile-view .contact__mail,
-  .contact--mobile-view .contact__address {
+  .contact--mobile-view .contact__address
+.contact__whatsapp {
     font-size: 14px;
     padding-left: 34px;
     display: inline-block;
@@ -971,7 +986,8 @@ body {
 @media (max-width: 479.98px) {
   .contact--mobile-view .contact__phone::before,
   .contact--mobile-view .contact__mail::before,
-  .contact--mobile-view .contact__address::before {
+  .contact--mobile-view .contact__address
+.contact__whatsapp::before {
     display: block;
   }
 }
